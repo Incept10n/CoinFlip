@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 
-const Rules = ({ appearingDelay }: { appearingDelay: number }) => {
+const Rules = ({
+    appearingDelay,
+    pressedPlay,
+}: {
+    appearingDelay: number;
+    pressedPlay: boolean;
+}) => {
     const [isButtonDisplayed, setIsButtonDisplayed] = useState<boolean>(false);
 
     useEffect(() => {
@@ -20,18 +26,24 @@ const Rules = ({ appearingDelay }: { appearingDelay: number }) => {
     return (
         <>
             <span
-                className={`fixed text-gray-500 text-[2em] hover:cursor-pointer
-                    border-[1px] border-gray-500 rounded-[12px] p-[6px] px-[30px]
-                    top-[55%] translate-y-[-50%] right-[20%] translate-x-[50%] 
+                className={`fixed text-gray-500 text-[2em] hover:cursor-pointer translate-y-[-50%] 
+                    border-[1px] border-gray-500 rounded-[12px] p-[6px] px-[30px] 
                     w-[200px] text-center hover:w-[430px] transition-all duration-[0.5s] ease-out
                     hover:text-gray-400 hover:border-gray-400 ${isHovered ? "h-[300px]" : "h-[60px]"}
-                    ${isButtonDisplayed ? "opacity-100" : "opacity-0"} overflow-hidden`}
+                    ${isButtonDisplayed ? "opacity-100" : "opacity-0"} overflow-hidden
+                    ${
+                        pressedPlay
+                            ? "left-[15%] top-[50%] translate-x-[-50%]"
+                            : "right-[20%] top-[55%] translate-x-[50%]"
+                    }`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
                 Rules
-                <div className="text-[0.6em] text-left mt-[40px]">
-                    Everything is as simple as it can get!
+                <div className="text-[0.6em] text-left mt-[30px]">
+                    <div className="mt-[-13px] mb-[-9px]">
+                        Everything is as simple as it can get!
+                    </div>
                     <br />
                     1) Put amount of coins you want to bet
                     <br />
