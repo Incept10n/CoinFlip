@@ -1,5 +1,226 @@
 #include "imports/stdlib.fc";
 
+const int min_amount_coins_contract = 50000000; ;; 0.05 TON
+
+{-
+  c4:
+	ownerAddress
+	recent_winner (ownerAddress if doesnt palyed yet)
+    Counter (0 default)
+	SumCoins
+	1st address
+	2nd address
+-}
+
+(slice, slice, int, int, slice, slice) loadData() inline {
+    var ds = get_data().begin_parse();
+
+    return (
+        ds~load_msg_addr(),
+        ds~load_msg_addr(),
+        ds~load_uint(32),
+        ds~load_coins(),
+        ds~load_msg_addr(),
+        ds~load_msg_addr()
+    );
+}
+
+
+
+
+
 () recv_internal(int my_balance, int msg_value, cell in_msg_full, slice in_msg_body) impure {
 
+    var data_full = in_msg_full.begin_parse();
+    int flags = data_full~load_uint(4);
+    if (flags & 1) {
+        return (); ;; ignore all bounced msgs
+    }
+
+    slice senderAddress = data_full~load_msg_addr();
+
+    slice data_body = in_msg_body;
+    int opcode = data_body~load_uint(32);
+
+    ;; deposit
+    if (opcode == 1) {
+        return ();
+    }
+
+    ;; coinflip_deposit
+    if (opcode == 2) {
+        int senderCoins = data_body~load_coins();
+        
+        ;; var (_, _, counter, _, _, _) = loadData();
+        var qd = get_data().begin_parse();
+
+        slice some1 = qd~load_msg_addr();
+        slice some2 = qd~load_msg_addr();
+        int counter = qd~load_uint(32);
+        int some3 = qd~load_coins();
+
+        if (counter == 0) {
+
+            ;; var (ownerAddress, _, _, SumCoins, _, _) = loadData();
+            var zd = get_data().begin_parse();
+
+            slice ownerAddress = zd~load_msg_addr();
+            slice ownerAddress = zd~load_msg_addr();
+            int counter = zd~load_uint(32);
+            int SumCoins = zd~load_coins();
+
+            counter = 1;
+            set_data(
+                begin_cell()
+                    .store_slice(ownerAddress)
+                    .store_slice(ownerAddress)
+                    .store_uint(counter, 32)
+                    .store_coins(senderCoins + SumCoins)
+                    .store_slice(senderAddress)
+                    .end_cell()
+            );
+            return ();
+        }
+
+        if (counter == 1) {
+            counter == 0;
+            ;; var (ownerAddress, _, _, SumCoins, firstAddress, _) = loadData();
+            var wd = get_data().begin_parse();
+
+            slice ownerAddress = wd~load_msg_addr();
+            slice some = wd~load_msg_addr();
+            int some = wd~load_uint(32);
+            int SumCoins = wd~load_coins();
+            slice firstAddress = wd~load_msg_addr();
+
+
+            send_raw_message(
+            begin_cell()
+                .store_uint(0x18, 6)
+                .store_slice(my_address())
+                .store_coins(50000000)
+                .store_uint(0, 1 + 4 + 4 + 64 + 32 + 1 + 1) ;; default message headers (see sending messages page)
+                .store_uint(3, 32) ;; opcode
+                .store_uint(counter, 32)
+                .store_slice(senderAddress) ;; forward user address
+                .store_coins(SumCoins + senderCoins)
+            .end_cell(),
+            1
+            );
+
+            return ();
+        }
+
+        throw(222); ;;invalid counter
+    }
+
+    ;; coinflip_logic
+    if (opcode == 3) {
+
+        throw_unless(333, equal_slice_bits(senderAddress, my_address()));
+        
+        ;; var (ownerAddress, _, _, _, firstAddress, _) = loadData(); 
+        var dw = get_data().begin_parse();
+        slice ownerAddress = dw~load_msg_addr();
+        var some = dw~load_msg_addr();
+        var some = dw~load_uint(32);
+        var some = dw~load_coins();
+        slice firstAddress = dw~load_msg_addr();
+
+
+        int counter = data_body~load_uint(32);
+        slice secondAddress = data_body~load_msg_addr();
+        int allCoins = data_body~load_coins();
+        
+        ;; randomize_lt();
+        ;; int x = rand(2);
+
+        ;; int x = 0; ;; for testing puproses
+
+        randomize(now());
+        int x = rand(2);
+
+        if (x == 0) {
+            set_data(
+                begin_cell()
+                    .store_slice(ownerAddress)
+                    .store_slice(firstAddress)
+                    .store_uint(0, 32)
+                    .store_coins(0)
+                    .end_cell()
+            );
+
+
+            send_raw_message(
+            begin_cell()
+                .store_uint(0x18, 6)
+                .store_slice(firstAddress)
+                .store_coins(allCoins)
+                .store_uint(0, 1 + 4 + 4 + 64 + 32 + 1 + 1) ;; default message headers (see sending messages page)
+            .end_cell(),
+            1 
+            );
+            return ();
+        }
+
+        if (x == 1) {
+            set_data(
+                begin_cell()
+                    .store_slice(ownerAddress)
+                    .store_slice(secondAddress)
+                    .store_uint(0, 32)
+                    .store_coins(0)
+                    .end_cell()
+            );
+
+            send_raw_message(
+            begin_cell()
+                .store_uint(0x18, 6)
+                .store_slice(secondAddress)
+                .store_coins(allCoins)
+                .store_uint(0, 1 + 4 + 4 + 64 + 32 + 1 + 1) ;; default message headers (see sending messages page)
+            .end_cell(),
+            1 
+            );
+            return ();
+        }
+        throw(112); ;; no proper x found
+    }
+
+    if (opcode == 4) {
+        int amountToWithdraw = data_body~load_coins();
+        var dc = get_data().begin_parse();
+        slice OwnerAddress = dc~load_msg_addr();
+
+        throw_unless(113, equal_slice_bits(OwnerAddress, senderAddress));
+
+        var [currentNumberCoins, _] = get_balance();
+
+        int trueAmountToWithdraw = min(amountToWithdraw, currentNumberCoins - min_amount_coins_contract);
+
+        var msg = begin_cell()
+        .store_uint(0x18, 6)
+        .store_slice(OwnerAddress)
+        .store_coins(trueAmountToWithdraw)
+        .store_uint(0, 1 + 4 + 4 + 64 + 32 + 1 + 1);
+        
+        send_raw_message(msg.end_cell(), 1);
+
+        return ();
+    }
+
+    throw(111); ;; no valid opcode found
+}
+
+
+slice getResentWinner () method_id {
+    var data = get_data().begin_parse();
+    slice Owner = data~load_msg_addr();
+    slice ResentWinner = data~load_msg_addr(); 
+    return ResentWinner;
+}
+
+int getBalance () method_id {
+    var [balance, _] = get_balance();
+    return balance;
 }

@@ -1,9 +1,14 @@
-import { toNano } from '@ton/core';
+import { Address, toNano } from '@ton/core';
 import { Main } from '../wrappers/Main';
 import { compile, NetworkProvider } from '@ton/blueprint';
 
 export async function run(provider: NetworkProvider) {
-    const main = provider.open(Main.createFromConfig({}, await compile('Main')));
+    const main = provider.open(Main.createFromConfig({
+        ownerAddress : Address.parse("0QBIrwlqlzbePQy__jZKdtaCbSAVCUwKUepyh45I9XXJSKIj"),
+        recentWinner : Address.parse("0QBIrwlqlzbePQy__jZKdtaCbSAVCUwKUepyh45I9XXJSKIj"),
+        counter : 0,
+        SumCoins : 0,
+    }, await compile('Main')));
 
     await main.sendDeploy(provider.sender(), toNano('0.05'));
 
