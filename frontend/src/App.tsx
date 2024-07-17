@@ -1,16 +1,11 @@
-import { TonConnectButton, TonConnectUIProvider } from "@tonconnect/ui-react";
+import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { manifestUrl } from "./constants";
-import { SendingTransaction } from "./components/SendingTransaction";
+import Application from "./components/Application";
 
 function App() {
     return (
         <TonConnectUIProvider manifestUrl={manifestUrl}>
-            <div className="flex justify-center">
-                <div className="flex-col text-center">
-                    <TonConnectButton />
-                    <SendingTransaction />
-                </div>
-            </div>
+            <Application />
         </TonConnectUIProvider>
     );
 }

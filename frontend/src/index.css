@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: rgb(60, 60, 60);
+}
+
+.coin-image-bg {
+    background-image: url("coin.png");
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    animation:
+        fallAndBounce 3s ease-in-out forwards,
+        rotateCoin 4s infinite linear;
+
+    position: fixed;
+    top: -200px;
+    left: 50%;
+}
+
+@keyframes rotateCoin {
+    0% {
+        transform: translateX(-50%) rotateY(0deg);
+    }
+    100% {
+        transform: translateX(-50%) rotateY(360deg);
+    }
+}
+
+@keyframes fallAndBounce {
+    0% {
+        top: -200px;
+    }
+    70% {
+        top: 300px;
+    }
+    80% {
+        top: 250px;
+    }
+    90% {
+        top: 300px;
+    }
+    100% {
+        top: 280px;
+    }
+}
