@@ -132,6 +132,11 @@ export class Main implements Contract {
         });
     }
 
+    async getCounter (provider: ContractProvider) {
+        const { stack } = await provider.get("getStateOfGame", []);
+        return stack.readNumber();
+    }
+
 
 
 }

@@ -9,13 +9,13 @@ export async function run(provider: NetworkProvider, args: string[]) {
 
     const main = provider.open(Main.createFromAddress(address));
 
-    await main.sendCoinflip(
+    await main.sendWithDraw(
         provider.sender(),
-        toNano('0.5'),
+        toNano(0.05),
+        toNano(1)
     )
 
+    
     ui.write('Balance withdrawn successfully!');
 }
 
-
-// This script is not ready !!!!!
