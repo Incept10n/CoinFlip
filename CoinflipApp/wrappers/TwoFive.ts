@@ -25,8 +25,8 @@ export class TwoFive implements Contract {
             sendMode: SendMode.PAY_GAS_SEPARATELY,
             body: beginCell()
                     .storeUint(1, 32)
-                    .storeAddress(Address.parse("0QBIrwlqlzbePQy__jZKdtaCbSAVCUwKUepyh45I9XXJSKIj"))
-                    .storeAddress(Address.parse("0QBIrwlqlzbePQy__jZKdtaCbSAVCUwKUepyh45I9XXJSKIj"))
+                    .storeAddress(Address.parse("EQDVtU59b2CTUj80GYVv64XWYeJjRYsFjKBLRyfi-q73Li3N"))
+                    .storeAddress(Address.parse("EQDVtU59b2CTUj80GYVv64XWYeJjRYsFjKBLRyfi-q73Li3N"))
                     .storeUint(0, 32)
                     .storeUint(0, 32)
             .endCell(),

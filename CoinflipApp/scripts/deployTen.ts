@@ -5,7 +5,7 @@ import { randomAddress } from '@ton/test-utils';
 
 export async function run(provider: NetworkProvider) {
     const ten = provider.open(Ten.createFromConfig({
-        ownerAddress : Address.parse("0QBIrwlqlzbePQy__jZKdtaCbSAVCUwKUepyh45I9XXJSKIj"),
+        ownerAddress : Address.parse("EQBIrwlqlzbePQy__jZKdtaCbSAVCUwKUepyh45I9XXJSERs"),
         recentWinner : randomAddress(),
         counter : 0,
         SumCoins : 0,

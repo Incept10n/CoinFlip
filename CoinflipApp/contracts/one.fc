@@ -61,10 +61,10 @@ const int tonForPlay = 1000000000; ;; 1 TON
         ;; var (_, _, counter, _, _, _) = loadData();
         var qd = get_data().begin_parse();
 
-        slice some1 = qd~load_msg_addr();
-        slice some2 = qd~load_msg_addr();
+        qd~load_msg_addr();
+        qd~load_msg_addr();
         int counter = qd~load_uint(32);
-        int some3 = qd~load_coins();
+        qd~load_coins();
 
         if (counter == 0) {
 
@@ -72,7 +72,7 @@ const int tonForPlay = 1000000000; ;; 1 TON
             var zd = get_data().begin_parse();
 
             slice ownerAddress = zd~load_msg_addr();
-            slice ownerAddress = zd~load_msg_addr();
+            slice someAddress = zd~load_msg_addr();
             int counter = zd~load_uint(32);
             int SumCoins = zd~load_coins();
 
@@ -80,7 +80,7 @@ const int tonForPlay = 1000000000; ;; 1 TON
             set_data(
                 begin_cell()
                     .store_slice(ownerAddress)
-                    .store_slice(ownerAddress)
+                    .store_slice(someAddress)
                     .store_uint(counter, 32)
                     .store_coins(senderCoins + SumCoins)
                     .store_slice(senderAddress)

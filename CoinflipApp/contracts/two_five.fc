@@ -72,7 +72,7 @@ const int tonForPlay = 2500000000; ;; 2.5 TON
             var zd = get_data().begin_parse();
 
             slice ownerAddress = zd~load_msg_addr();
-            slice ownerAddress = zd~load_msg_addr();
+            slice someAddress = zd~load_msg_addr();
             int counter = zd~load_uint(32);
             int SumCoins = zd~load_coins();
 
@@ -80,7 +80,7 @@ const int tonForPlay = 2500000000; ;; 2.5 TON
             set_data(
                 begin_cell()
                     .store_slice(ownerAddress)
-                    .store_slice(ownerAddress)
+                    .store_slice(someAddress)
                     .store_uint(counter, 32)
                     .store_coins(senderCoins + SumCoins)
                     .store_slice(senderAddress)
