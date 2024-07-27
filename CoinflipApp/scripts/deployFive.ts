@@ -13,6 +13,8 @@ export async function run(provider: NetworkProvider) {
 
     await five.sendDeploy(provider.sender(), toNano('0.05'));
 
+    console.log(five.address);
+
     await provider.waitForDeploy(five.address);
 
     // run methods on `five`

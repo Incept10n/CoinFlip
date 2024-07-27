@@ -5,13 +5,13 @@ import { NetworkProvider, sleep } from '@ton/blueprint';
 export async function run(provider: NetworkProvider, args: string[]) {
     const ui = provider.ui();
 
-    const address = Address.parse("EQBCe4vuGyxr6oOatpgQw4qpbQ0T5AbJgDEO3C7eEn1zoDCT");
+    const address = Address.parse("EQDitjh3raz8UW0FXhdarE4DGVoSrTDX5X8uDr_0AR0S-CMe");
 
     const main = provider.open(Main.createFromAddress(address));
 
     await main.sendDeposit(
         provider.sender(),
-        toNano(0.5),
+        toNano(0.05),
     )
 
     

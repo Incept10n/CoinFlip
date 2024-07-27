@@ -13,6 +13,8 @@ export async function run(provider: NetworkProvider) {
 
     await twoFive.sendDeploy(provider.sender(), toNano('0.05'));
 
+    console.log(twoFive.address)
+
     await provider.waitForDeploy(twoFive.address);
 
     // run methods on `twoFive`

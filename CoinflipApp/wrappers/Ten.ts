@@ -1,9 +1,19 @@
 import { Address, beginCell, Cell, Contract, contractAddress, ContractProvider, Sender, SendMode } from '@ton/core';
 
-export type TenConfig = {};
+export type TenConfig = {
+    ownerAddress : Address,
+    recentWinner : Address,
+    counter : number,
+    SumCoins : number
+};
 
 export function tenConfigToCell(config: TenConfig): Cell {
-    return beginCell().endCell();
+    return beginCell()
+    .storeAddress(config.ownerAddress)
+    .storeAddress(config.recentWinner)
+    .storeUint(config.counter, 32)
+    .storeUint(config.SumCoins, 32)
+    .endCell();
 }
 
 export class Ten implements Contract {

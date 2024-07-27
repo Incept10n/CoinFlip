@@ -5,14 +5,14 @@ import { NetworkProvider, sleep } from '@ton/blueprint';
 export async function run(provider: NetworkProvider, args: string[]) {
     const ui = provider.ui();
 
-    const address = Address.parse("EQBCe4vuGyxr6oOatpgQw4qpbQ0T5AbJgDEO3C7eEn1zoDCT");
+    const address = Address.parse("EQDPBbnQZZQTxfA3Gi69tEfkG48BQHzEUEeaDUKrhTh_Z0u8");
 
     const main = provider.open(Main.createFromAddress(address));
 
     await main.sendWithDraw(
         provider.sender(),
         toNano(0.05),
-        toNano(0.15)
+        toNano(0.14)
     )
 
     

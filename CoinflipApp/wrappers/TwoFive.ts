@@ -1,9 +1,19 @@
 import { Address, beginCell, Cell, Contract, contractAddress, ContractProvider, Sender, SendMode } from '@ton/core';
 
-export type TwoFiveConfig = {};
+export type TwoFiveConfig = {
+    ownerAddress : Address,
+    recentWinner : Address,
+    counter : number,
+    SumCoins : number
+};
 
 export function twoFiveConfigToCell(config: TwoFiveConfig): Cell {
-    return beginCell().endCell();
+    return beginCell()
+    .storeAddress(config.ownerAddress)
+    .storeAddress(config.recentWinner)
+    .storeUint(config.counter, 32)
+    .storeUint(config.SumCoins, 32)
+    .endCell();
 }
 
 export class TwoFive implements Contract {
@@ -25,8 +35,8 @@ export class TwoFive implements Contract {
             sendMode: SendMode.PAY_GAS_SEPARATELY,
             body: beginCell()
                     .storeUint(1, 32)
-                    .storeAddress(Address.parse("EQDVtU59b2CTUj80GYVv64XWYeJjRYsFjKBLRyfi-q73Li3N"))
-                    .storeAddress(Address.parse("EQDVtU59b2CTUj80GYVv64XWYeJjRYsFjKBLRyfi-q73Li3N"))
+                    .storeAddress(Address.parse("0QBIrwlqlzbePQy__jZKdtaCbSAVCUwKUepyh45I9XXJSKIj"))
+                    .storeAddress(Address.parse("0QBIrwlqlzbePQy__jZKdtaCbSAVCUwKUepyh45I9XXJSKIj"))
                     .storeUint(0, 32)
                     .storeUint(0, 32)
             .endCell(),
