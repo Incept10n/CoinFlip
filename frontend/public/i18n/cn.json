@@ -1,0 +1,48 @@
+{
+    "title1": "Cryptoroll",
+    "title2": "与 TON 区块链集成",
+    "title3": "分散式抛硬币",
+    "moreInfo": "更多信息",
+
+    "howToPlay": "如何玩",
+
+    "step1": "按下按钮向智能合约发送 TON",
+    "step2": "查看钱包并确认交易",
+    "step3": "等待对手",
+    "step4": "如果您收到的金币是您发送金币的 2 倍，您就赢了",
+    "step5": "如果你没有得到任何回报，你就输了",
+
+    "additionalInfo": "其他信息",
+
+    "paragraph1": "所有操作都在 TON 区块链上执行，有 5 个智能合约，每个合约都有自己的随机化逻辑，用于执行一定金额的资金发送。",
+
+    "view5LinksHeader": "您可以在这里查看所有照片：",
+
+    "link1Label": "0.5 TON:",
+    "link2Label": "1 TON:",
+    "link3Label": "2.5 TON:",
+    "link4Label": "5 TON:",
+    "link5Label": "10 TON:",
+
+    "paragraph2": "创建这个项目的目的是使 TON 赌币分散化、开源并免费提供给所有人。",
+    "paragraph3": "我们衷心希望您喜欢我们的作品，并感谢我们为您提供独一无二的体验所做的努力。",
+
+    "notRefundable": "您发送的 Ton 不可退款",
+    "notRefundablePopup": "这意味着一旦发送了 TON，就必须等待对手，不能收回。",
+
+    "send0.5Ton": "发送 0.5 TON",
+    "send2.5Ton": "发送 2.5 TON",
+    "send1Ton": "发送 1 TON",
+    "send5Ton": "发送 5 TON",
+    "send10Ton": "发送 10 TON",
+
+    "checkForPlayers": "检查可用的玩家",
+    "proceeding": "交易正在进行中",
+    "looking": "尋找球员",
+    "playerNotFound": "未找到玩家，但您仍然可以加入并等待",
+    "toPlayWith": "有玩家可以一起玩",
+    "success": "成功",
+    "wrong": "出了些问题",
+
+    "chooseButtonMobile": "选择要发送的 TON 数量"
+}

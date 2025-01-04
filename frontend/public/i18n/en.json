@@ -1,0 +1,48 @@
+{
+    "title1": "Cryptoroll",
+    "title2": "Integration with TON blockchain",
+    "title3": "Decentralized coinflip",
+    "moreInfo": "More info",
+
+    "howToPlay": "How to play",
+
+    "step1": "Press button to send TON to smart contract",
+    "step2": "Check your wallet and confirm transaction",
+    "step3": "Wait for your opponent",
+    "step4": "If you get 2x the coins you had sent, you won",
+    "step5": "If you don't get anything in return, you lost",
+
+    "additionalInfo": "Additional info",
+
+    "paragraph1": "Everything is performed on TON blockchain, there are 5 smart contracts each tailored to execute its own randomizing logic for certain amount of funds sent.",
+
+    "view5LinksHeader": "You can view all of them here:",
+
+    "link1Label": "0.5 TON:",
+    "link2Label": "1 TON:",
+    "link3Label": "2.5 TON:",
+    "link4Label": "5 TON:",
+    "link5Label": "10 TON:",
+
+    "paragraph2": "This project was created to make gambling TON coins decentralized, open source and free for everyone.",
+    "paragraph3": "We really hope you enjoyed what we made and appreciate our efforts to make your experience truly unique.",
+
+    "notRefundable": "Ton you send is not refundable",
+    "notRefundablePopup": "It means that once you've sent TON you must wait for opponent, you can't take it back.",
+
+    "send0.5Ton": "Send 0.5 TON",
+    "send2.5Ton": "Send 2.5 TON",
+    "send1Ton": "Send 1 TON",
+    "send5Ton": "Send 5 TON",
+    "send10Ton": "Send 10 TON",
+
+    "checkForPlayers": "Check for available players",
+    "proceeding": "Transaction in progress",
+    "looking": "Looking for players",
+    "playerNotFound": "No players found but you still can join and wait",
+    "toPlayWith": "There is a player to play with",
+    "success": "Success",
+    "wrong": "Something went wrong",
+
+    "chooseButtonMobile": "Choose the amount of TON to send"
+}

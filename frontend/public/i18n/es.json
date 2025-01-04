@@ -1,0 +1,48 @@
+{
+    "title1": "Cryptoroll",
+    "title2": "Integración con la cadena de bloques TON",
+    "title3": "Coinflip descentralizado",
+    "moreInfo": "Seguir leyendo",
+
+    "howToPlay": "Cómo jugar",
+
+    "step1": "Pulse el botón para enviar TON al contrato inteligente",
+    "step2": "Compruebe su monedero y confirme la transacción",
+    "step3": "Esperar al adversario",
+    "step4": "Si usted consigue 2x las monedas que había enviado, usted ganó",
+    "step5": "Si no recibes nada a cambio, has perdido",
+
+    "additionalInfo": "Información adicional",
+
+    "paragraph1": "Todo se realiza en TON blockchain, hay 5 contratos inteligentes cada uno adaptado para ejecutar su propia lógica aleatoria para cierta cantidad de fondos enviados.",
+
+    "view5LinksHeader": "Puede verlos todos aquí:",
+
+    "link1Label": "0.5 TON:",
+    "link2Label": "1 TON:",
+    "link3Label": "2.5 TON:",
+    "link4Label": "5 TON:",
+    "link5Label": "10 TON:",
+
+    "paragraph2": "Este proyecto fue creado para hacer que las monedas de juego TON sean descentralizadas, de código abierto y gratuitas para todo el mundo.",
+    "paragraph3": "Esperamos de verdad que le haya gustado lo que hemos hecho y que aprecie nuestros esfuerzos por hacer que su experiencia sea realmente única.",
+
+    "notRefundable": "El tonelaje que envíes no es reembolsable",
+    "notRefundablePopup": "Significa que una vez que hayas enviado TON debes esperar a tu oponente, no podrás recuperarlo.",
+
+    "send0.5Ton": "Envía 0,5 TON",
+    "send2.5Ton": "Envía 2,5 TON",
+    "send1Ton": "Envía 1 TON",
+    "send5Ton": "Envía 5 TON",
+    "send10Ton": "Envía 10 TON",
+
+    "checkForPlayers": "Comprobar jugadores disponibles",
+    "proceeding": "Transacción en proceso",
+    "looking": "Buscando jugadores",
+    "playerNotFound": "No se encontraron jugadores, pero aún puedes unirte y esperar.",
+    "toPlayWith": "Hay un jugador con quien jugar",
+    "success": "Éxito",
+    "wrong": "Algo salió mal",
+
+    "chooseButtonMobile": "Elige la cantidad de TON a enviar"
+}

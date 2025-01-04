@@ -1,78 +1,91 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-    background-color: rgb(60, 60, 60);
-
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+body.dark {
+    background-color: #3c3c3c;
 }
 
-.coin-image-bg {
-    background-image: url("coin.png");
-    background-size: contain;
-    width: 200px;
-    height: 200px;
-    animation:
-        fallAndBounce 3s ease-in-out forwards,
-        rotateCoin 4s infinite linear;
-
-    position: fixed;
-    top: -200px;
-    left: 50%;
-
-    transition:
-        top 0.5s ease-in-out,
-        left 0.5s ease-in-out,
-        transform 0.5s ease-in-out;
+body.light {
+    background-color: #ffffff;
 }
 
-.coin-image-bg-button-pressed {
-    background-image: url("coin.png");
-    background-size: contain;
-    width: 200px;
-    height: 200px;
-    animation: rotateCoin 4s infinite linear;
-
-    position: fixed;
-    top: 10px;
-    left: 14%;
-
-    scale: 0.8;
-
-    transition:
-        top 0.5s ease-in-out,
-        left 0.5s ease-in-out,
-        transform 0.5s ease-in-out;
+.custom-white-text {
+    color: #becbe4;
 }
 
-@keyframes rotateCoin {
-    0% {
-        transform: translateX(-50%) rotateY(0deg);
-    }
+.custom-white-bg {
+    background-color: #becbe4;
+}
+
+.custom-blue-text {
+    color: #798cc6;
+}
+
+.custom-blue-bg {
+    background-color: #5c6786;
+}
+
+@keyframes floatAnimation {
+    0%,
     100% {
-        transform: translateX(-50%) rotateY(360deg);
+        transform: translateY(0) translateX(-50%);
+    }
+    50% {
+        transform: translateY(-10px) translateX(-50%);
     }
 }
 
-@keyframes fallAndBounce {
-    0% {
-        top: -200px;
+.animate-floating {
+    animation: floatAnimation 5s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #d9d9d9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.custom-shadow {
+    box-shadow: 0px 0px 21.2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.triangle-custom-shadow {
+    box-shadow: -4px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-choose-amount-shadow {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
     }
-    70% {
-        top: 300px;
+    to {
+        opacity: 1;
     }
-    80% {
-        top: 250px;
-    }
-    90% {
-        top: 300px;
-    }
-    100% {
-        top: 280px;
-    }
+}
+
+.delayed-appear {
+    opacity: 0;
+    animation: appear 0.00001s forwards 0.5s;
+}
+
+.button-shadow {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }

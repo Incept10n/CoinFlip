@@ -1,0 +1,48 @@
+{
+    "title1": "Cryptoroll",
+    "title2": "TONブロックチェーンとの統合",
+    "title3": "分散型コインフリップ",
+    "moreInfo": "詳細はこちら",
+
+    "howToPlay": "プレーの仕方",
+
+    "step1": "ボタンを押してスマートコントラクトにTONを送信する",
+    "step2": "ウォレットをチェックし、取引を確認する",
+    "step3": "相手を待つ",
+    "step4": "送ったコインの2倍のコインを受け取ったら、あなたの勝ちです。",
+    "step5": "もし見返りがなければ、あなたは負けたことになる",
+
+    "additionalInfo": "追加情報",
+
+    "paragraph1": "全てはTONブロックチェーン上で実行され、5つのスマートコントラクトがあり、それぞれのスマートコントラクトは一定の送金額に対して独自のランダム化ロジックを実行するように調整されている。",
+
+    "view5LinksHeader": "そのすべてをここで見ることができる：",
+
+    "link1Label": "0.5 TON:",
+    "link2Label": "1 TON:",
+    "link3Label": "2.5 TON:",
+    "link4Label": "5 TON:",
+    "link5Label": "10 TON:",
+
+    "paragraph2": "このプロジェクトは、ギャンブル用のTONコインを分散化し、オープンソースで、誰でも無料で使えるようにするために作られた。",
+    "paragraph3": "私たちが作ったものを楽しんでいただき、お客様の経験を本当にユニークなものにするための私たちの努力に感謝していただければ幸いです。",
+
+    "notRefundable": "お送りいただいた金額は返金できません。",
+    "notRefundablePopup": "つまり、一度TONを送ったら、相手を待たなければならない。",
+
+    "send0.5Ton": "0.5 TON を送る",
+    "send2.5Ton": "2.5 TON を送る",
+    "send1Ton": "1 TON を送る",
+    "send5Ton": "5 TON を送る",
+    "send10Ton": "10 TON を送る",
+
+    "checkForPlayers": "出場可能な選手をチェック",
+    "proceeding": "進行中の取引",
+    "looking": "選手募集",
+    "playerNotFound": "選手は見つかりませんでしたが、参加することは可能です。",
+    "toPlayWith": "一緒にプレーする選手がいる",
+    "success": "成功",
+    "wrong": "何かが間違っていた",
+
+    "chooseButtonMobile": "送信するTONの量を選択する"
+}

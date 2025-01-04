@@ -1,0 +1,48 @@
+{
+    "title1": "Cryptoroll",
+    "title2": "Integration mit der TON-Blockchain",
+    "title3": "Dezentraler Münzeinwurf",
+    "moreInfo": "Mehr Infos",
+
+    "howToPlay": "Wie man spielt",
+
+    "step1": "Drücken Sie die Taste, um TON an den Smart Contract zu senden.",
+    "step2": "Prüfen Sie Ihre Brieftasche und bestätigen Sie die Transaktion",
+    "step3": "Warten Sie auf Ihren Gegner",
+    "step4": "Wenn du 2x so viele Münzen bekommst, wie du geschickt hast, hast du gewonnen.",
+    "step5": "Wenn Sie keine Gegenleistung erhalten, haben Sie verloren.",
+
+    "additionalInfo": "Zusätzliche Informationen",
+
+    "paragraph1": "Alles wird auf der TON-Blockchain abgewickelt. Es gibt 5 intelligente Verträge, von denen jeder darauf zugeschnitten ist, seine eigene Zufallslogik für bestimmte Geldbeträge auszuführen.",
+
+    "view5LinksHeader": "Sie können sie alle hier einsehen:",
+
+    "link1Label": "0.5 TON:",
+    "link2Label": "1 TON:",
+    "link3Label": "2.5 TON:",
+    "link4Label": "5 TON:",
+    "link5Label": "10 TON:",
+
+    "paragraph2": "Dieses Projekt wurde ins Leben gerufen, um die TON-Glücksspielmünzen dezentralisiert, quelloffen und kostenlos für jedermann zu machen.",
+    "paragraph3": "Wir hoffen sehr, dass Ihnen das, was wir gemacht haben, gefallen hat und dass Sie unsere Bemühungen zu schätzen wissen, Ihr Erlebnis wirklich einzigartig zu machen.",
+
+    "notRefundable": "Der von Ihnen gesendete Ton wird nicht erstattet.",
+    "notRefundablePopup": "Das bedeutet, dass Sie, sobald Sie TON gesendet haben, auf den Gegner warten müssen, Sie können es nicht zurücknehmen.",
+
+    "send0.5Ton": "Senden Sie 0,5 TON",
+    "send2.5Ton": "Senden Sie 2,5 TON",
+    "send1Ton": "Senden Sie 1 \u00A0 TON",
+    "send5Ton": "Senden Sie 5 \u00A0 TON",
+    "send10Ton": "Senden Sie 10 TON",
+
+    "checkForPlayers": "Nach verfügbaren Spielern suchen",
+    "proceeding": "Transaktion wird ausgeführt",
+    "looking": "Spieler gesucht",
+    "playerNotFound": "Es wurden keine Spieler gefunden, aber Sie können trotzdem beitreten und warten",
+    "toPlayWith": "Es gibt einen Spieler, mit dem man spielen kann",
+    "success": "Erfolg",
+    "wrong": "Etwas ist schief gelaufen",
+
+    "chooseButtonMobile": "Wählen Sie den zu sendenden TON-Betrag"
+}

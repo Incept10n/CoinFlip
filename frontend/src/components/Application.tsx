@@ -1,46 +1,99 @@
-import { useEffect, useState } from "react";
-import { TonConnectButton } from "@tonconnect/ui-react";
-import TopText from "./TopText";
-import PlayButton from "./PlayButton";
-import Rules from "./Rules";
-import ActuallCoinflip from "./ActuallCoinflip";
+import {
+    createContext,
+    Dispatch,
+    SetStateAction,
+    useEffect,
+    useState,
+} from "react";
+import { useTranslation } from "react-i18next";
+import TopTextWithAnimation from "./landing/TopTextWithAnimation";
+import { TFunction } from "i18next";
+import LanguageSelect from "./landing/LanguageSelect";
+import TonLogo from "./landing/TonLogo";
+import TonConnectButtonWrapper from "./landing/TonConnectButtonWrapper";
+import MoreInfo from "./landing/MoreInfo";
+import { useTonWallet } from "@tonconnect/ui-react";
+import FunctionalityButtons from "./functionality/FunctionalityButtons";
+import MobileChooseButton from "./functionality/MobileChooseButton";
+import DarkModeSwitchButton from "./landing/DarkModeSwitchButton";
+
+interface ApplicationContextProps {
+    changeLanguage: (newLanguageCode: string) => void;
+    t: TFunction<"translation", undefined>;
+    isDarkMode: boolean;
+    setIsDarkMode: Dispatch<SetStateAction<boolean>>;
+    currentLanguageCode: string;
+    isWalletConnected: boolean;
+}
+
+export const ApplicationContext = createContext<ApplicationContextProps | null>(
+    null,
+);
 
 const Application = () => {
-    const [topTextAppear, setTopTextAppear] = useState<boolean>(false);
-    const [pressedPlay, setPressedPlay] = useState<boolean>(false);
+    const { i18n, t } = useTranslation();
+    const [currentLanguageCode, setCurrentLanguageCode] =
+        useState<string>("En");
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
-    const appearingDelay: number = 1500;
+    const wallet = useTonWallet();
+    const [isWalletConnected, setIsWalletConnected] = useState<boolean>(
+        wallet !== null,
+    );
 
     useEffect(() => {
-        setTimeout(() => setTopTextAppear(true), appearingDelay);
-    }, []);
+        setIsWalletConnected(wallet !== null);
+    }, [wallet]);
 
-    useEffect(() => {}, [pressedPlay]);
+    const changeLanguage = (newLanguageCode: string): void => {
+        setCurrentLanguageCode(
+            newLanguageCode[0].toUpperCase() + newLanguageCode[1],
+        );
+        i18n.changeLanguage(newLanguageCode);
+    };
+
+    useEffect(() => {
+        const bodyElement = document.getElementsByTagName("body")[0];
+
+        if (isDarkMode) {
+            bodyElement.classList.add("dark");
+            bodyElement.classList.remove("light");
+        } else {
+            bodyElement.classList.add("light");
+            bodyElement.classList.remove("dark");
+        }
+    }, [isDarkMode]);
+
+    // TODO: PRODUCTION SETUP
+    // TODO: make a lot of changes to the constants.ts file:
+    // TODO: update links to smart contracts and addresses
+    // TODO: update toncenter url to use mainnet in domain
 
     return (
-        <>
-            <div
-                className={`${pressedPlay ? "coin-image-bg-button-pressed" : "coin-image-bg"}`}
-            />
-            <TopText
-                topTextAppear={topTextAppear}
-                appearingDelay={appearingDelay}
-                pressedPlay={pressedPlay}
-            />
-            <TonConnectButton
-                className={`${topTextAppear ? "bottom-[130px]" : "bottom-[-60px]"} 
-                                fixed translate-x-[-50%] 
-                                transition-all duration-[1s] ease-in-out
-                                ${pressedPlay ? "left-[15%]" : "left-[50%]"}`}
-            />
-            <PlayButton
-                appearingDelay={appearingDelay}
-                setPressedPlay={setPressedPlay}
-                pressedPlay={pressedPlay}
-            />
-            <Rules appearingDelay={appearingDelay} pressedPlay={pressedPlay} />
-            <ActuallCoinflip pressedPlay={pressedPlay} />
-        </>
+        <ApplicationContext.Provider
+            value={{
+                changeLanguage,
+                t,
+                isDarkMode,
+                setIsDarkMode,
+                currentLanguageCode,
+                isWalletConnected,
+            }}
+        >
+            <div>
+                <TopTextWithAnimation />
+                <DarkModeSwitchButton />
+                <LanguageSelect />
+                <TonLogo />
+                <TonConnectButtonWrapper />
+                <MoreInfo />
+                {window.innerWidth <= 640 ? (
+                    <MobileChooseButton />
+                ) : (
+                    <FunctionalityButtons />
+                )}
+            </div>
+        </ApplicationContext.Provider>
     );
 };
 

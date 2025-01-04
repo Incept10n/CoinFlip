@@ -1,0 +1,48 @@
+{
+    "title1": "Cryptoroll",
+    "title2": "Intégration avec la blockchain TON",
+    "title3": "Chariot de monnaie décentralisé",
+    "moreInfo": "Plus d'informations",
+
+    "howToPlay": "Comment jouer",
+
+    "step1": "Appuyez sur le bouton pour envoyer des tonnes au contrat intelligent",
+    "step2": "Vérifiez votre portefeuille et confirmez la transaction",
+    "step3": "Attendez votre adversaire",
+    "step4": "Si vous obtenez deux fois les pièces que vous avez envoyées, vous avez gagné.",
+    "step5": "Si vous n'obtenez rien en retour, vous avez perdu",
+
+    "additionalInfo": "Informations complémentaires",
+
+    "paragraph1": "Tout est réalisé sur la blockchain TON, il y a 5 contrats intelligents chacun conçu pour exécuter sa propre logique de randomisation pour un certain montant de fonds envoyés.",
+
+    "view5LinksHeader": "Vous pouvez les consulter tous ici :",
+
+    "link1Label": "0.5 TON:",
+    "link2Label": "1 TON:",
+    "link3Label": "2.5 TON:",
+    "link4Label": "5 TON:",
+    "link5Label": "10 TON:",
+
+    "paragraph2": "Ce projet a été créé pour rendre les pièces de monnaie TON décentralisées, open source et gratuites pour tout le monde.",
+    "paragraph3": "Nous espérons vraiment que vous avez aimé ce que nous avons fait et que vous appréciez nos efforts pour rendre votre expérience vraiment unique.",
+
+    "notRefundable": "Ce que vous envoyez n'est pas remboursable",
+    "notRefundablePopup": "Cela signifie qu'une fois que vous avez envoyé une tonne, vous devez attendre l'adversaire, vous ne pouvez pas revenir en arrière.",
+
+    "send0.5Ton": "Envoyer 0,5 TON",
+    "send2.5Ton": "Envoyer 0,5 TON",
+    "send1Ton": "Envoyer 1 TON",
+    "send5Ton": "Envoyer 5 TON",
+    "send10Ton": "Envoyer 10 TON",
+
+    "checkForPlayers": "Vérifiez les joueurs disponibles",
+    "proceeding": "Transaction en cours",
+    "looking": "À la recherche de joueurs",
+    "playerNotFound": "Aucun joueur trouvé mais vous pouvez toujours rejoindre et attendre",
+    "toPlayWith": "Il y a un joueur avec qui jouer",
+    "success": "Succès",
+    "wrong": "Quelque chose s'est mal passé",
+
+    "chooseButtonMobile": "Choisissez le montant de TON à envoyer"
+}

@@ -1,0 +1,48 @@
+{
+    "title1": "Cryptoroll",
+    "title2": "TON 블록체인과 통합",
+    "title3": "탈중앙화 코인 플립",
+    "moreInfo": "자세한 정보",
+
+    "howToPlay": "플레이 방법",
+
+    "step1": "버튼을 눌러 스마트 컨트랙트에 TON을 전송합니다.",
+    "step2": "지갑 확인 및 거래 확인",
+    "step3": "상대를 기다립니다.",
+    "step4": "보낸 코인의 2배를 받으면 이깁니다.",
+    "step5": "대가로 아무것도 얻지 못하면 잃은 것입니다.",
+
+    "additionalInfo": "추가 정보",
+
+    "paragraph1": "모든 것은 TON 블록체인에서 수행되며, 각각 특정 금액의 송금에 대해 자체적인 무작위 로직을 실행하도록 맞춤화된 5개의 스마트 컨트랙트가 있습니다.",
+
+    "view5LinksHeader": "여기에서 모두 확인할 수 있습니다:",
+
+    "link1Label": "0.5 TON:",
+    "link2Label": "1 TON:",
+    "link3Label": "2.5 TON:",
+    "link4Label": "5 TON:",
+    "link5Label": "10 TON:",
+
+    "paragraph2": "이 프로젝트는 도박용 TON 코인을 탈중앙화, 오픈소스화하여 누구나 무료로 사용할 수 있도록 하기 위해 만들어졌습니다.",
+    "paragraph3": "저희가 만든 콘텐츠를 즐기셨기를 바라며, 특별한 경험을 선사하기 위한 저희의 노력에 감사드립니다.",
+
+    "notRefundable": "전송한 톤은 환불되지 않습니다.",
+    "notRefundablePopup": "즉, 톤을 보낸 후에는 상대를 기다려야 하며, 다시 되돌릴 수 없습니다.",
+
+    "send0.5Ton": "0.5 TON 보내기",
+    "send2.5Ton": "2.5 TON 보내기",
+    "send1Ton": "1 TON 보내기",
+    "send5Ton": "5 TON 보내기",
+    "send10Ton": "10 TON 보내기",
+
+    "checkForPlayers": "사용 가능한 플레이어 확인",
+    "proceeding": "거래 진행 중",
+    "looking": "플레이어 찾기",
+    "playerNotFound": "플레이어를 찾을 수 없지만 참여하여 기다릴 수 있습니다.",
+    "toPlayWith": "함께 플레이할 플레이어가 있습니다.",
+    "success": "성공",
+    "wrong": "문제가 발생했습니다.",
+
+    "chooseButtonMobile": "전송할 TON의 양을 선택하세요."
+}
